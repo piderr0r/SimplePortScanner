@@ -1,0 +1,19 @@
+#! /usr/bin/bash
+#bash file to scan a target's ip and port
+
+#check if nmap is installed
+echo "Use Tool Appopriately"
+echo "       "
+echo "Enter Target Ip : "
+read Target
+echo " "
+echo " Enter Port To Be Scanned"
+read Port
+echo " "
+echo " Scanning Started................"
+echo " "
+nmap -sT $Target -p $Port > /dev/null -oG scan1
+cat scan1 > scan2
+echo " Scan Comlete : "
+echo " "
+cat scan2
